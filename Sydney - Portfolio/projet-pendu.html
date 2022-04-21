@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIO SLAM - Pendu</title>
+    <link rel="stylesheet" href="asset/css/boot.css" />
+    <link rel="stylesheet" href="asset/css/prism.css">
+    <script type="text/javascript" src="asset/js/prism.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="asset/img/icon/s.png">
+    <style>
+      .banner-image {
+        background-image: url('asset/img/bg-pendu.jpeg');
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body class="line-numbers">
+
+    <!-- Navbar  -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+      <div class="container">
+        <a class="navbar-brand fs-2 fw-bold text-white" href="#">Sydney <span class="text-dark bg-light rounded-1">Nana Tchuigoua</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav  align-items-center">
+            <li class="nav-item">
+              <a class="nav-link text-white fs-6" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-6" href="btssio.html">BTS SIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-6" href="competence.html">Compétences</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="projet.html" role="button" aria-expanded="false">Projets</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="projet.html">Tous les projets</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="projet-php.html">PPE PHP</a></li>
+                <li><a class="dropdown-item" href="projet-java.html">PPE Java</a></li>
+                <li><a class="dropdown-item" href="projet-uml.html">Projet UML</a></li>
+                <li><a class="dropdown-item" href="#">Le pendu</a></li>
+                <li><a class="dropdown-item" href="projet-portfolio.html">Portfolio</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-6" href="veille.html">Veille</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-6" href="stage.html">Stage</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white fs-6" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+   
+
+
+
+    <!-- Banner Image  -->
+    <div
+      class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="content text-center">
+        <h1 class="text-white  display-3 text-decoration-underline py-2 fw-bold">Projet : Pendu</h1>
+        <h2 class="text-white display-6 py-2">Projet réalisé en Python</h2>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+
+      <section class="py-5">
+        <h2 class="text-center py-4 fs-1">Cahier des charges</h2>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <img src="asset/img/cahier-des-charges.jpg" class="w-100" alt="trophée">
+          </div>
+          <div class="col-12 col-md-8">
+            <p class="text-start fs-5">● Créer le jeu du pendu en langage Python</p>
+            <p class="text-start fs-5">● Définir une fonction "Dictionnaire" qui contiendra la liste des mots possibles</p>
+            <p class="text-start fs-5">● Proposer un mot aléatoire grâce à la fonction "Dictionnaire".</p>  
+            <p class="text-start fs-5">● Par rapport au mot aléatoire choisi :</p>  
+            <p class="text-start mx-5 fs-5">- le joueur devra indiquez une lettre dans le champ de saisie.</p>  
+            <p class="text-start mx-5 fs-5">
+              - selon la lettre choisie et le mot aléatoire défini pour cette manche,
+              il faut indiquer au joueur quelles sont la/les lettre(s) bien placée(s) s'il y en a. Sinon,
+              afficher le nombre d'essais restant.</p>  
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="">
+        <div class="row">
+          <h2 class="text-center py-4 fs-1">Conditions de victoire</h2>
+          <div class="col-12 col-md-8">
+            <p class="text-start fs-5">Pour que le joueur gagne au pendu, il y a 2 manières possibles : </p>
+            <p class="text-start mx-5 fs-5">1. Si le joueur trouve toutes les lettres du mot à chercher il gagne, même si il n'a pas tenté de l'écrire</p>
+            <p class="text-start mx-5 fs-5">2. Si le joueur tente un mot et qu'il s'avère être le bon, il gagne le jeu</p>
+          </div> 
+          <div class="col-12 col-md-4">
+            <img src="asset/img/trophy.png" class="w-75 mx-auto d-block" alt="trophée">
+          </div> 
+        </div>
+      </section>
+
+
+      <section class="py-5">
+        <h2 class="text-center py-4 fs-1">Le code source</h2>
+        <pre><code class="language-python">import random
+          
+# Liste des mots "secrets" possibles
+          
+dictionnaire=["chauve","monument","insecte","tornade","photocopie","chapeau","champagne","magasin",
+              "agrafeuse","pharmacie","observatoire","zoo","janvier","princesse","honte","novice",  
+              "population","xylophone","gazelle","moteur","sentiment","dromadaire","appartement",
+              "filtre","barbe","plastique","vivant","casserole","jus","assassin","grand","table"]
+
+# Fonction sélectionnant un mot aléatoire dans la liste dictionnaire
+
+def mot(dictionnaire):
+  aleatoire=random.randint(0,len(dictionnaire)-1)
+  mot_a_trouver=dictionnaire[aleatoire]
+  return mot_a_trouver
+  
+# Initialisation des variables
+              
+mot_a_trouver=(mot(dictionnaire))
+essai=7
+mot_code=''
+
+# Création d'une chaine de caractères indiquant le nombre de lettres du mot secret
+              
+for i in range (len(mot_a_trouver)):
+mot_code=mot_code+"_"
+print(mot_code)
+
+# Création d'une boucle fonctionnant tant que le mot codé n'est pas équivalent au mot secret et que le nombre d'essai est supérieur à 0
+
+while mot_code != mot_a_trouver and essai>0:
+
+  # Proposer à l'utilisateur s'il souhaite ou non saisir le mot secret
+  o_n=str(input("\nVoulez vous tenter de saisir le mot? (o/n) "))
+
+  # Si l'utilisateur décide : non
+  if o_n=="n":                                                       
+  lettre=str(input("\nVeuillez saisir une lettre: "))
+  essai=essai-1
+  verif=False
+
+    # Boucle permettant d'afficher la/les lettre(s) choisie(s) par l'utilisateur, à l'emplacement dans le mot codé
+    for i in range(len(mot_a_trouver)):
+      if(mot_a_trouver[i]==lettre):
+        mot_liste = list(mot_code)
+        mot_liste[i] = lettre
+        mot_code = ''.join(mot_liste)
+        verif=True
+
+      # Si la lettre saisie par l'utilisateur n'est pas dans le mot secret
+      if verif==False:
+        print("\nDommage votre lettre n'est pas dans le mot")
+        print("\nIl vous reste encore",essai,"essais.\n")
+        print(mot_code)
+                  
+      # Sinon
+      else:
+        essai=essai+1
+        print("\nSuper votre lettre est dans le mot\n")
+        print("\nIl vous reste encore",essai,"essais.\n")
+        print(mot_code)
+                
+  # Si l'utilisateur décide : oui
+  if o_n=="o":
+    user_mot=str(input("\nVeuillez saisir le mot: "))
+    
+    # Si le mot saisi par l'utilisateur est identique au mot secret
+    if (user_mot==mot_a_trouver):
+      print("\nBravo vous avez trouver le mot !")
+      break;
+    
+    # Sinon
+    else:
+        print("\nDommage vous n'avez pas trouver le mot, il vous reste donc",essai-1,"essais !")
+        essai=essai-1
+        print(mot_code)
+              
+# Si l'utilisateur trouve le mot secret uniquement avec des lettres saisies 
+if mot_code == mot_a_trouver:
+  print("\nBravo vous avez trouver le mot !")
+              
+# Si le nombre d'essais est égal à 0
+if essai==0:
+print("\nVous avez perdu ! le mot a trouver été :",mot_a_trouver)</code></pre>
+
+</section>
+</div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container-fluid py-5 bg-dark">
+        <div class="text-center">
+          <a href="#" class="text-decoration-none text-white" data-bs-toggle="modal" data-bs-target="#mentionsLegales">Mentions légales</a>
+        </div>
+        <p class="text-light text-center"> &copy 2022 Sydney Nana Tchuigoua | All rights reserved</p>
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="mentionsLegales" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h1 class="modal-title">Mentions Légales</h1>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+              <p class="text-center">
+                Merci de lire avec attention les différentes modalités d'utilisation du présent site avant d'y parcourir ses pages.
+                En vous connectant sur ce site, vous acceptez sans réserves les présentes modalités. Aussi, conformément à l'article n°6
+                de la Loi n°2004-575 du 21 Juin 2004 pour la confiance dans l'économie numérique, les responsables du présent 
+                site internet www.sydney-nana-tchuigoua.fr.
+              </p>
+
+              <h2 class="fs-4 text-center">Conditions d'utilisation</h2>     
+              <p class="text-center">
+                Ce site www.sydney-nana-tchuigoua.fr est proposé en différents langages web (HTML5, Javascript, CSS, etc ...) pour un meilleur confort d'utilisation
+                et un graphisme plus agréable, nous vous recommandons de recourir à des navigateurs modernes comme Internet explorer, Safari, Firefox,
+                Google Chrome, etc...<br>
+                M. Sydney Nana Tchuigoua met en oeuvre tous les moyens dont il dispose, pour assurer une information fiable et une mise à jour fiable
+                de son site internet. Toutefois, des erreurs ou omissions peuvent survenir. L'internaute devra donc s'assurer de l'exactitude des
+                informations auprès de M. Sydney Nana Tchuigoua, et signaler toutes modifications du site qu'il jugerait utile. M. Sydney Nana Tchuigoua
+                n'est en aucun cas responsable de l'utilisation faite de ces informations, et de tout préjudice direct ou indirect pouvant en découler.
+              </p>
+
+              <h2 class="fs-4 text-center">Liens hypertextes</h2>
+              <p class="text-center">
+                Les sites internet peuvent offrir des liens vers d'autres sites internet ou d'autres ressources disponibles
+                sur Internet. M. Sydney Nana Tchuigoua ne dispose d'aucun moyen pour contrôler les sites en connexion avec
+                ses sites internet, ne répond pas de la disponibilité de tels sites et sources externes, ni ne la garantit.
+                Les utilisateurs, les abonnés et les visiteurs des sites internet ne peuvent pas mettre en place un hyperlien
+                en direction de ce site sans l'autorisation expresse et préalable de M. Sydney Nana Tchuigoua.<br>
+                Dans l'hypothèse où un utilisateur ou visiteur souhaiterait mettre en place un hyperlien en direction de 
+                ce site internet, il lui appartiendra d'adresser un email accessible sur le site afin de formuler sa demande 
+                de mise en place d'un hyperlien. M. Sydney Nana Tchuigoua se réserve le droit d'accepter ou de refuser un hyperlien
+                sans avoir à en justifier sa décision.
+              </p>  
+                  
+              <h2 class="fs-4 text-center">Services fournis</h2>
+              <p class="text-center">
+                M. Sydney Nana Tchuigoua s'efforce de fournir sur le site www.sydney-nana-tchuigoua.fr des informations
+                aussi précises que possible. les renseignements figurant sur le site ne sont pas 
+                exhaustifs et les photos non contractuelles. Ils sont donnés sous réserve de 
+                modifications ayant été apportées depuis leur mise en ligne. Par ailleurs, tous les
+                informations indiquées sur le site sont données à titre indicatif, et sont susceptibles
+                de changer ou d'évoluer sans préavis.
+              </p>    
+              <h2 class="fs-4 text-center">Limitation contractuelles sur les données</h2>
+                  
+              <p class="text-center">
+                Les informations contenues sur ce site sont aussi précises que possible et le site
+                remis à jour à différentes périodes de l'année, mais peut toutefois contenir des 
+                inexactitudes ou des omissions. Si vous constatez une lacune, erreur ou ce qui 
+                parait être un dysfonctionnement, merci de bien vouloir le signaler par email, à 
+                l'adresse sydneynt11@gmail.com, en décrivant le problème de la manière la plus 
+                précise possible (page posant problème, type d'ordinateur et de navigateur utilisé,...).
+                Tout contenu téléchargé se fait aux risques et périls de l'utilisateur et sous sa 
+                seule responsabilité. En conséquence, ne saurait être tenu responsable d'un quelconque
+                dommage subi par l'ordinateur de l'utilisateur ou d'une quelconque perte de données 
+                consécutives au téléchargement.<br>
+                De plus, l'utilisateur du site s'engage à accéder au site en utilisant un matériel 
+                récent, ne contenant pas de virus et avec un navigateur de dernière génération mis-à-jour.
+                Les liens hypertextes mis en place dans le cadre du présent site internet en 
+                direction d'autres ressources présentes sur le réseau Internet ne sauraient 
+                engager la responsabilité de M. Sydney Nana Tchuigoua.
+              </p>
+
+              <h2 class="fs-4 text-center">Propriété intellectuelle</h2>
+              <p class="text-center"> 
+                Tout le contenu du présent site incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations,
+                sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de M. Sydney Nana Tchuigoua à l'exception des
+                marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs. Toute reproduction, distribution, modification,
+                adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord
+                exprès par écrit de M. Sydney Nana Tchuigoua. Cette représentation ou reproduction, par quelque procédé que ce soit, 
+                constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle. Le non-respect
+                de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. En outre, 
+                les propriétaires des contenus copiés pourraient intenter une action en justice à votre encontre.
+              </p>
+
+              <h2 class="fs-4 text-center">Litiges</h2>
+              <p class="text-center">
+                Les présentes conditions du site sont régies par les lois françaises et 
+                toute contestation ou litiges qui pourraient naître de l'interprétation ou de
+                l'exécution de celles-ci seront de la compétence exclusive des tribunaux. La
+                langue de référence, pour le règlement de contentieux éventuels, est le français.
+              </p>
+
+              <h2 class="fs-4 text-center">Données personnelles</h2>
+              <p class="text-center">
+                De manière générale, vous n'êtes pas tenu de nous communiquer vos données personnelles lorsque
+                vous visitez le site Internet www.sydney-nana-tchuigoua.fr. Cependant, ce principe comporte certaines exceptions.
+                En effet, vous pouvez être amenés à nous communiquer certaines données telles que : votre nom ou votre adresse électronique.
+                Dans tous les cas, vous pouvez refuser de fournir vos données personnelles. Dans ce cas, vous ne pourrez pas utiliser les 
+                services du site, notamment celui de solliciter des renseignements. Enfin, nous pouvons collecter de manière automatique
+                certaines informations vous concernant lors d'une simple navigation sur mon site Internet, notamment : des informations
+                concernant l'utilisation de mon site, comme les zones que vous visitez et les services auxquels vous accédez, votre 
+                adresse IP, le type de votre navigateur, vos temps d'accès. De telles informations sont utilisées exclusivement à des fins
+                de statistiques internes. Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant
+                la directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.
+              </p>
+              <h2 class="fs-4 text-center">Editeur du site</h2>
+              <p class="text-center">
+                M. Sydney Nana Tchuigoua<br>
+                Responsable éditorial : Sydney Nana Tchuigoua<br>
+                Email : sydneynt11@gmail.com<br>
+                Site Web : www.sydney-nana-tchuigoua.fr<br>
+              </p>
+
+              <h2 class="fs-4 text-center">Développement</h2>
+              <p class="text-center">
+                M. Sydney Nana Tchuigoua<br>
+                Site Web : www.sydney-nana-tchuigoua.fr<br>
+              </p>
+              
+              <h2 class="fs-4 text-center">Hébergement</h2>
+              <p class="text-center">
+                Hébergeur : LWS, 10 RUE PENTHIEVRE, 75008 PARIS, France<br>
+                Site Web : www.lws.fr<br>
+              </p>
+                </div>
+             </div>
+          </div>
+      </div>
+    </footer>
+
+
+          <!-- Script JS -->
+
+        <script src="asset/js/bootstrap.js"></script>
+        <script src="asset/js/jquery.js"></script>
+        <script src="asset/js/bootstrap.bundle.js"></script>
+       
+        <script type="text/javascript">
+          var nav = document.querySelector('nav');
+    
+          window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 100) {
+              nav.classList.add('bg-dark', 'shadow');
+            } else {
+              nav.classList.remove('bg-dark', 'shadow');
+            }
+          });
+        </script>
+  </body>
+</html>
